@@ -1,0 +1,59 @@
+# --------------------------------------------------------------- #
+#    _____                         __    __  .__                
+#   /     \ ___.__.   ______ _____/  |__/  |_|__| ____    ____  
+#  /  \ /  <   |  |  /  ___// __ \   __\   __\  |/    \  / ___\ 
+# /    Y    \___  |  \___ \\  ___/|  |  |  | |  |   |  \/ /_/  >
+# \____|__  / ____| /____  >\___  >__|  |__| |__|___|  /\___  / 
+#         \/\/           \/     \/                   \//_____/  
+# --------------------------------------------------------------- #
+#
+# bash complete enable
+autoload bashcompinit
+bashcompinit
+
+# $PATH
+export PATH="$HOME/.bin:$PATH"
+
+# Rust setup
+source $HOME/.cargo/env
+
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# alias
+source ~/.dotfiles/alias.sh
+
+# import 
+source ~/.zplug/init.zsh
+source ~/.bash_profile
+source ~/.dotfiles/tmux_session.sh
+
+# zplug "b-ryan/powerline-shell"
+# 
+# function powerline_precmd() {
+#     PS1="$(powerline-shell --shell zsh $?)"
+# }
+# 
+# function install_powerline_precmd() {
+#   for s in ${precmd_functions[@]}; do
+#     if [ "$s" = "powerline_precmd" ]; then
+#       return
+#     fi
+#   done
+#   precmd_functions+=(powerline_precmd)
+# }
+# 
+# if [ "$TERM" != "linux" ]; then
+#     install_powerline_precmd
+# fi
+
+# tmux auto start
+[[ $TERM != "screen" ]] && exec tmux
+
+# completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# tmux session
+tmux_automatically_attach_session
