@@ -6,6 +6,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew install zsh
     brew install tmux
+    brew install reattach-to-user-namespace
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if [ -e /etc/debian_version ]; then
         apt-get install git
