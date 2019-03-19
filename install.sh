@@ -7,6 +7,8 @@ if [ "$(uname)" == 'Darwin' ]; then
     brew install zsh
     brew install tmux
     brew install reattach-to-user-namespace
+    brew install fzy
+
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if [ -e /etc/debian_version ]; then
         apt-get install git
