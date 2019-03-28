@@ -23,12 +23,12 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # alias
-source ~/.dotfiles/alias.sh
+source ~/dotfiles/alias.sh
 
 # import 
 source ~/.zplug/init.zsh
 source ~/.bash_profile
-source ~/.dotfiles/tmux_session.sh
+source ~/dotfiles/tmux_session.sh
 
 # zplug "b-ryan/powerline-shell"
 # 
@@ -50,7 +50,7 @@ source ~/.dotfiles/tmux_session.sh
 # fi
 
 # tmux auto start
-[[ $TERM != "screen" ]] && exec tmux
+# [[ $TERM != "screen" ]] && exec tmux
 
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
