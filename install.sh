@@ -50,7 +50,9 @@ echo "source ~/.dotfiles/zsh/.zshmine" >> ~/.zshrc
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 # make config dir
-mkdir ~/.config
+if [ ! -e "~/.config" ]; then
+    mkdir ~/.config
+fi
 
 # install font
 git clone https://github.com/powerline/fonts.git --depth=1
