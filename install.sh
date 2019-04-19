@@ -62,12 +62,13 @@ cd ..
 rm -rf fonts
 
 # set zsh
+cp -r ~/.dotfiles/zsh/.bin ~/.bin
 
 # set tmux
-ln -s ./tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # set nvim
-ln -s ./nvim ~/.config/nvim
+ln -s ./.dotfiles/nvim ~/.config/nvim
 
 # set Alacritty
 ln -s ./alacritty ~/.config/alacritty
