@@ -1,5 +1,5 @@
 # make config dir
-if [ ! -e "~/.config" ]; then
+if [ ! -d ~/.config ]; then
     mkdir ~/.config
 fi
 
