@@ -49,29 +49,9 @@ echo "source ~/.dotfiles/zsh/.zshmine" >> ~/.zshrc
 # install pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-# make config dir
-if [ ! -e "~/.config" ]; then
-    mkdir ~/.config
-fi
+# load setting
+source ~/.dotfiles/setting.sh
 
-# install font
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
-
-# set zsh
-cp -r ~/.dotfiles/zsh/.bin ~/.bin
-
-# set tmux
-ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
-
-# set nvim
-ln -s ./.dotfiles/nvim ~/.config/nvim
-
-# set Alacritty
-ln -s ./alacritty ~/.config/alacritty
 git clone https://github.com/jwilm/alacritty.git
 cd alacritty
 make
