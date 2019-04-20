@@ -31,3 +31,6 @@ tmux_automatically_attach_session
 
 # gnubin
 PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
+# alacritty
+PATH="$HOME/.dotfiles/alacritty-src/target/release/:$PATH"
