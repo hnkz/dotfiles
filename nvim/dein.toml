@@ -1,8 +1,0 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
