@@ -11,7 +11,10 @@ cp ~/.dotfiles/zsh/agnoster-time.zsh-theme ~/.oh-my-zsh/themes
 ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 # set nvim
-ln -sf ./.dotfiles/nvim ~/.config/nvim
+if [ ! -d ~/.config/nvim ]; then
+    mkdir ~/.config/nvim
+fi
+cp nvim/* ~/.config/nvim/
 
 # set Alacritty
 if [ ! -d ~/.config/alacritty ]; then
