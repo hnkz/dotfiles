@@ -14,5 +14,7 @@ ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ln -sf ./.dotfiles/nvim ~/.config/nvim
 
 # set Alacritty
-ln -sf ./alacritty ~/.config/alacritty
-
+if [ ! -d ~/.config/alacritty ]; then
+    mkdir ~/.config/alacritty
+fi
+ln -sf ./alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml

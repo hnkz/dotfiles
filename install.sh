@@ -60,7 +60,7 @@ source ~/.dotfiles/setting.sh
 
 git clone https://github.com/jwilm/alacritty.git alacritty-src
 cd alacritty-src
-make install
+make binary
 
 # manual specification
 echo "install completed!"
