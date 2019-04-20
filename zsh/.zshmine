@@ -21,7 +21,7 @@ source $HOME/.cargo/env
 source ~/.dotfiles/zsh/alias.sh
 
 # import 
-source ~/.dotfiles/zsh/tmux_session.sh
+source ~/.dotfiles/tmux/tmux_session.sh
 
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
