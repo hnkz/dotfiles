@@ -58,8 +58,8 @@ rm -rf fonts
 # load setting
 source ~/.dotfiles/setting.sh
 
-git clone https://github.com/jwilm/alacritty.git
-cd alacritty
+git clone https://github.com/jwilm/alacritty.git alacritty-src
+cd alacritty-src
 make
 
 # manual specification
