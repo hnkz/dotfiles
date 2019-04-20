@@ -31,6 +31,3 @@ tmux_automatically_attach_session
 
 # gnubin
 PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-
-# zsh
-ZSH_THEME="agnoster-time"
