@@ -49,6 +49,12 @@ echo "source ~/.dotfiles/zsh/.zshmine" >> ~/.zshrc
 # install pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
+# install font
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
 # load setting
 source ~/.dotfiles/setting.sh
 
