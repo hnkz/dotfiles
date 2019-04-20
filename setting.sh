@@ -17,4 +17,4 @@ ln -sf ./.dotfiles/nvim ~/.config/nvim
 if [ ! -d ~/.config/alacritty ]; then
     mkdir ~/.config/alacritty
 fi
-ln -sf ./alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+cp alacritty/alacritty.yml ~/.config/alacritty/
