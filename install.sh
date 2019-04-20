@@ -58,6 +58,14 @@ rm -rf fonts
 # load setting
 source ~/.dotfiles/setting.sh
 
+# nvim dein
+if [ ! -d ~/.cache/dein ]; then
+  mkdir -p ~/.cache/dein
+fi
+wget https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+rm installer.sh
+
 git clone https://github.com/jwilm/alacritty.git alacritty-src
 cd alacritty-src
 make binary
