@@ -11,8 +11,20 @@
 autoload bashcompinit
 bashcompinit
 
-# $PATH
+# zsh setting
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
+
+# .bin $PATH
 export PATH="$HOME/.bin:$PATH"
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Rust setup
 source $HOME/.cargo/env
