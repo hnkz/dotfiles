@@ -1,0 +1,33 @@
+Config
+{ font = "xft:Migu 1M:size=13"
+, bgColor = "#1c1c1c"
+, fgColor = "#a0a0a0"
+, position = TopSize C 100 33
+-- , position = Static { xpos = 37 , ypos = 0, width = 1845, height = 18 }
+, lowerOnStart = False
+, overrideRedirect = False
+, border = BottomBM 0
+, borderColor = "#4e4e4e"
+, commands =
+  [
+    Run Cpu ["--normal" , "#b0bdbd"] 100
+  , Run Memory ["-t", "Mem: <used>M"] 100
+  , Run Swap ["-t", "Swap: <used>M"] 100
+  , Run DiskIO [("/", "IO: <read>B|<write>B")] [] 100
+  , Run DynNetwork [
+          "-t", "Net: <rx>KB|<tx>KB"
+        , "--Low"    , "40"
+        , "--High"   , "200"
+        , "-m"       , "4"
+        , "--normal" , "#b0bdbd"
+        , "--high"   , "#a5d6a7"
+    ] 100
+  , Run ThermalZone 0 ["-t", "Thermal: <temp>°C"] 100
+  , Run BatteryP ["BAT0"] ["-t", "Bat: <watts>watts <left>%"] 600
+  , Run Date "%a %m/%d %H:%M" "date" 10
+  , Run StdinReader
+  ]
+, sepChar = "%"
+, alignSep = "{}"
+, template = "%StdinReader% {} <fc=#ff3333>%cpu%</fc>, <fc=#ff3300>%memory%</fc>, %swap%, %diskio%, %dynnetwork%, %thermal0%, <fc=#00ff80>%battery%</fc>, <fc=#ece391>%date%</fc>"
+}
