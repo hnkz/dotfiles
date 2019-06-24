@@ -18,6 +18,7 @@ set backspace=indent,eol,start
 set wildmenu
 set noswapfile
 set tags=<tags_path>
+inoremap <C-h> <ESC>
 inoremap <S-Tab> <C-d>
 " ctags config
 nnoremap <C-j> g<C-j>
