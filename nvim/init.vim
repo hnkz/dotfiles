@@ -5,8 +5,8 @@ set number
 set title
 set ambiwidth=double
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smartindent
 set nrformats-=octal
 set hidden
@@ -20,43 +20,26 @@ set noswapfile
 set tags=<tags_path>
 inoremap <C-h> <ESC>
 inoremap <S-Tab> <C-d>
+" auto complete
+inoremap { {}<LEFT> 
+if getline('.')[col('.')]=="}"
+  inoremap } }<RIGHT>
+endif
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+if &ft=='vim' 
+inoremap ' ''<LEFT>
+endif
+inoremap " ""<LEFT>
 " ctags config
 nnoremap <C-j> g<C-j>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 " common keymap
-nnoremap s <Nop>
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap sJ <C-w>J
-nnoremap sK <C-w>K
-nnoremap sL <C-w>L
-nnoremap sH <C-w>H
-nnoremap s+ <C-w>+
-nnoremap s- <C-w>-
-nnoremap s< <C-w><
-nnoremap s> <C-w>>
-nnoremap sn gt
-nnoremap sp gT
-nnoremap sr <C-w>r
-nnoremap s= <C-w>=
-nnoremap sw <C-w>w
-nnoremap so <C-w>_<C-w>|
-nnoremap sO <C-w>=
-nnoremap sN :<C-u>bn<CR>
-nnoremap sP :<C-u>bp<CR>
-nnoremap st :<C-u>tabnew<CR>
-nnoremap sT :<C-u>Unite tab<CR>
-nnoremap ss :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
-nnoremap sq :<C-u>q<CR>
-nnoremap sQ :<C-u>bd<CR>
-nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
-nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-tnoremap <Esc> <C-\><C-n>
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 
@@ -69,3 +52,38 @@ set ambiwidth=double
 set tags=.tags;~
 nnoremap <silent> <C-K><C-T> :TagbarToggle<CR>
 
+" each file setting
+autocmd BufRead,BufNewFile *.ex set filetype=elixir
+autocmd BufRead,BufNewFile *.vim set filetype=vim
+
+" dein
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  let g:rc_dir    = expand("~/.config/nvim/")
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  " call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
+
+" NerdTree
+map <C-n> :NERDTreeToggle<CR>
