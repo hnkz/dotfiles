@@ -8,3 +8,5 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'elixir-editors/vim-elixir'
 
+[[plugins]]
+repo = 'rust-lang/rust.vim'

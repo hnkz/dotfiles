@@ -1,6 +1,7 @@
 " set clipboard=unnamed
 set hls
 syntax on
+filetype on
 set number
 set title
 set ambiwidth=double
@@ -22,6 +23,14 @@ inoremap <C-h> <ESC>
 inoremap <S-Tab> <C-d>
 
 " auto complete
+function! s:skipClosePare(defkey,altkey)
+  if getline('.')[col('.') - 1] == a:defkey
+    return a:altkey
+  endif
+  return a:defkey
+endfunction
+inoremap <buffer> <expr> ) <SID>skipClosePare(")", "\<Right>")
+inoremap <buffer> <expr> } <SID>skipClosePare("}", "\<Right>")
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
@@ -54,6 +63,7 @@ nnoremap <silent> <C-K><C-T> :TagbarToggle<CR>
 autocmd BufRead,BufNewFile *.ex set filetype=elixir
 autocmd BufRead,BufNewFile *.eex set filetype=eelixir
 autocmd BufRead,BufNewFile *.vim set filetype=vim
+autocmd BufRead,BufNewFile *.rs set filetype=rust
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
