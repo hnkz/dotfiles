@@ -1,4 +1,4 @@
-"set clipboard=unnamed
+" set clipboard=unnamed
 set hls
 syntax on
 set number
@@ -20,20 +20,18 @@ set noswapfile
 set tags=<tags_path>
 inoremap <C-h> <ESC>
 inoremap <S-Tab> <C-d>
+
 " auto complete
-inoremap { {}<LEFT> 
-if getline('.')[col('.')]=="}"
-  inoremap } }<RIGHT>
-endif
+inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
-if &ft=='vim' 
-inoremap ' ''<LEFT>
+if &ft!='vim'
+  inoremap ' ''<LEFT>
+  inoremap " ""<LEFT>
 endif
-inoremap " ""<LEFT>
 " ctags config
 nnoremap <C-j> g<C-j>
 inoremap <C-j> <Down>
@@ -54,6 +52,7 @@ nnoremap <silent> <C-K><C-T> :TagbarToggle<CR>
 
 " each file setting
 autocmd BufRead,BufNewFile *.ex set filetype=elixir
+autocmd BufRead,BufNewFile *.eex set filetype=eelixir
 autocmd BufRead,BufNewFile *.vim set filetype=vim
 
 " dein
