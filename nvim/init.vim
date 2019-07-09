@@ -20,6 +20,9 @@ set wildmenu
 set noswapfile
 set tags=<tags_path>
 inoremap <C-h> <ESC>
+map <C-t>c <ESC>:tabnew<CR>
+map <C-t>n <ESC>gt<CR>
+map <C-t>p <ESC>gT<CR>
 inoremap <S-Tab> <C-d>
 
 " auto complete
@@ -43,6 +46,7 @@ if &ft!='vim'
 endif
 " ctags config
 nnoremap <C-j> g<C-j>
+
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
@@ -64,6 +68,7 @@ autocmd BufRead,BufNewFile *.ex set filetype=elixir
 autocmd BufRead,BufNewFile *.eex set filetype=eelixir
 autocmd BufRead,BufNewFile *.vim set filetype=vim
 autocmd BufRead,BufNewFile *.rs set filetype=rust
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
