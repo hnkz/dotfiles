@@ -6,8 +6,8 @@ set number
 set title
 set ambiwidth=double
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set smartindent
 set nrformats-=octal
 set hidden
@@ -69,6 +69,7 @@ autocmd BufRead,BufNewFile *.eex set filetype=eelixir
 autocmd BufRead,BufNewFile *.vim set filetype=vim
 autocmd BufRead,BufNewFile *.rs set filetype=rust
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.py set filetype=python
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
