@@ -1,6 +1,5 @@
 " set clipboard=unnamed
 set hls
-syntax on
 filetype on
 set number
 set title
@@ -63,14 +62,6 @@ set ambiwidth=double
 set tags=.tags;~
 nnoremap <silent> <C-K><C-T> :TagbarToggle<CR>
 
-" each file setting
-autocmd BufRead,BufNewFile *.ex set filetype=elixir
-autocmd BufRead,BufNewFile *.eex set filetype=eelixir
-autocmd BufRead,BufNewFile *.vim set filetype=vim
-autocmd BufRead,BufNewFile *.rs set filetype=rust
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.py set filetype=python
-
 " dein
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -102,3 +93,5 @@ endif
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
+
+syntax on
