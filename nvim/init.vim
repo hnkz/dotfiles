@@ -24,25 +24,6 @@ map <C-t>n <ESC>gt<CR>
 map <C-t>p <ESC>gT<CR>
 inoremap <S-Tab> <C-d>
 
-" auto complete
-function! s:skipClosePare(defkey,altkey)
-  if getline('.')[col('.') - 1] == a:defkey
-    return a:altkey
-  endif
-  return a:defkey
-endfunction
-inoremap <buffer> <expr> ) <SID>skipClosePare(")", "\<Right>")
-inoremap <buffer> <expr> } <SID>skipClosePare("}", "\<Right>")
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-if &ft!='vim'
-  inoremap ' ''<LEFT>
-  inoremap " ""<LEFT>
-endif
 " ctags config
 nnoremap <C-j> g<C-j>
 
@@ -94,4 +75,8 @@ endif
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
+" syntax
 syntax on
+
+" auto complete
+autocmd BufNewFile,BufRead * source ~/.config/nvim/auto.vim
