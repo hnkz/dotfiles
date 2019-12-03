@@ -7,7 +7,6 @@ set ambiwidth=double
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set smartindent
 set nrformats-=octal
 set hidden
 set history=50
