@@ -11,8 +11,8 @@ bindkey "^[[Z" reverse-menu-complete
 source ~/.zplug/init.zsh
 zplug "b-ryan/powerline-shell"
 
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -21,8 +21,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # zplug
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # theme (https://github.com/sindresorhus/pure#zplug)　好みのスキーマをいれてくだされ。
-# zplug "mafredri/zsh-async"
-# zplug "sindresorhus/pure"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
 # 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
 zplug "zsh-users/zsh-syntax-highlighting"
 # タイプ補完
