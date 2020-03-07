@@ -13,3 +13,6 @@ repo = 'rust-lang/rust.vim'
 
 [[plugins]]
 repo = 'zenlang/zen.vim'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'

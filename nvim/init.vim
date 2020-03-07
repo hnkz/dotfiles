@@ -6,6 +6,7 @@ set title
 set ambiwidth=double
 set expandtab
 set tabstop=4
+filetype plugin indent on
 set shiftwidth=4
 set nrformats-=octal
 set hidden
@@ -23,24 +24,20 @@ map <C-t>n <ESC>gt<CR>
 map <C-t>p <ESC>gT<CR>
 inoremap <S-Tab> <C-d>
 
-" ctags config
-nnoremap <C-j> g<C-j>
-
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 " common keymap
 set fileformats=unix,dos,mac
-set fileencodings=utf-8,sjis
+set fileencodings=utf-8
 
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set ambiwidth=double
 
-" ctags tagbar
-set tags=.tags;~
-nnoremap <silent> <C-K><C-T> :TagbarToggle<CR>
+" ctags setting
+autocmd BufNewFile,BufRead * source ~/.config/nvim/ctags.vim
 
 " dein
 let s:dein_dir = expand('~/.cache/dein')
