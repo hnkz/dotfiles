@@ -9,9 +9,9 @@ bindkey "^[[Z" reverse-menu-complete
 
 # import 
 source ~/.zplug/init.zsh
-zplug "b-ryan/powerline-shell"
+# zplug "b-ryan/powerline-shell"
 
-# autoload -U promptinit; promptinit
+autoload -U promptinit; promptinit
 # prompt pure
 
 # completions
@@ -20,10 +20,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #########
 # zplug
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# theme (https://github.com/sindresorhus/pure#zplug)　好みのスキーマをいれてくだされ。
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
-# 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
+# zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zsh-users/zsh-syntax-highlighting"
 # タイプ補完
 zplug "zsh-users/zsh-autosuggestions"
@@ -31,8 +30,6 @@ zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
 zplug "mollifier/anyframe"
 zstyle ":anyframe:selector:" use peco
-# cd
-zplug "b4b4r07/enhancd", use:init.sh
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -66,4 +63,15 @@ eval "$(pyenv init -)"
 # alias
 source ~/.dotfiles/alias.sh
 
+# path
+if [ -f '/usr/local/opt/binutils/bin/gobjcopy' ]; then
+    export PATH="/usr/local/opt/binutils/bin:$PATH"
+    alias objcopy gobjcopy
+fi
 
+# Installation
+if [ ! -f ~/.cargo/bin/exa ]; then
+    cargo install exa;
+else
+    alias ls=exa;
+fi
