@@ -16,3 +16,6 @@ repo = 'zenlang/zen.vim'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
