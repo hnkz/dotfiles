@@ -19,3 +19,6 @@ repo = 'majutsushi/tagbar'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'fatih/vim-go'

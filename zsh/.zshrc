@@ -75,3 +75,9 @@ if [ ! -f ~/.cargo/bin/exa ]; then
 else
     alias ls=exa;
 fi
+
+# depot_tools setting
+export PATH=$HOME/depot_tools:$PATH
+
+# golang setting
+export PATH=$PATH:/usr/local/go/bin
