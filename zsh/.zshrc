@@ -81,3 +81,6 @@ export PATH=$HOME/depot_tools:$PATH
 
 # golang setting
 export PATH=$PATH:/usr/local/go/bin
+
+# import localbash
+source ~/.localbash

@@ -19,9 +19,7 @@ set wildmenu
 set noswapfile
 set tags=<tags_path>
 inoremap <C-h> <ESC>
-map <C-t>c <ESC>:tabnew<CR>
-map <C-t>n <ESC>gt<CR>
-map <C-t>p <ESC>gT<CR>
+map gc <ESC>:tabnew<CR>
 inoremap <S-Tab> <C-d>
 
 inoremap <C-j> <Down>
