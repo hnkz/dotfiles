@@ -55,11 +55,6 @@ if [ -f '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/path.zsh.inc' ]
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/completion.zsh.inc'; fi
 
-# pyenv setup
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # alias
 source ~/.dotfiles/alias.sh
 
@@ -84,3 +79,11 @@ export PATH=$PATH:/usr/local/go/bin
 
 # import localbash
 source ~/.localbash
+
+# anyenv
+if [ -d $HOME/.anyenv ]
+then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+fi
+
