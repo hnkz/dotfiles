@@ -51,10 +51,16 @@ fi
 if [ ! -d ~/.anyenv/envs/pyenv ]; then
     ~/.anyenv/bin/anyenv install pyenv
     pyenv install 3.7.2
+    pyenv rehash
     pyenv global 3.7.2
 fi
 
 ## nvim
+if ! which nvim 1>/dev/null; then
+    sudo apt-add-repository ppa:neovim-ppa/stable
+    sudo apt update
+    sudo apt install neovim
+fi
 
 ## Rust
 if [ ! -d ~/.cargo ]; then
