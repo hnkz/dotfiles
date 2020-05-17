@@ -1,4 +1,8 @@
 # omajinai
+
+# install tools
+source ~/.dotfiles/zsh/install.sh
+
 autoload -Uz compinit && compinit
 setopt auto_list
 setopt auto_menu
@@ -46,29 +50,13 @@ source ~/.cargo/bin
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
-# added by travis gem
-[ -f /Users/sugerme/.travis/travis.sh ] && source /Users/sugerme/.travis/travis.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sugerme/work/web/liberta/sokuma/google-cloud-sdk/completion.zsh.inc'; fi
-
 # alias
-source ~/.dotfiles/alias.sh
+source ~/.dotfiles/zsh/alias.sh
 
 # path
 if [ -f '/usr/local/opt/binutils/bin/gobjcopy' ]; then
     export PATH="/usr/local/opt/binutils/bin:$PATH"
     alias objcopy gobjcopy
-fi
-
-# Installation
-if [ ! -f ~/.cargo/bin/exa ]; then
-    cargo install exa;
-else
-    alias ls=exa;
 fi
 
 # depot_tools setting
