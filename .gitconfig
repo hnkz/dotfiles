@@ -3,7 +3,7 @@
     email = hanakazu8989@gmail.com
 [alias]
     co = checkout
-    cm = commit
+    cm = commit -m
     ad = add
     ap = add -p
     br = branch
