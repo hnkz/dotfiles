@@ -10,5 +10,6 @@
     ba = branch -a
     pscb = !git push origin `git rev-parse --abbrev-ref HEAD`
     ps = push
+    st = status
 [merge]
     tool = vimdiff
