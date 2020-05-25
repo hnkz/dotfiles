@@ -6,7 +6,7 @@
 - nvim
 - .zshrc
 
-## instalation
+## Installation
 1. `git clone git@github.com:hnkz/dotfiles.git ~/.dotfiles`
 2. `ln -s .dotfiles/zsh/.zshrc ~/.zshrc`
 3. `ln -s .dotfiles/.tmux.conf ~/.tmux.conf`
