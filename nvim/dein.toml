@@ -22,3 +22,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'fatih/vim-go'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'

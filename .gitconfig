@@ -1,0 +1,14 @@
+[user]
+    name = hnkz
+    email = hanakazu8989@gmail.com
+[alias]
+    co = checkout
+    cm = commit
+    ad = add
+    ap = add -p
+    br = branch
+    ba = branch -a
+    pscb = !git push origin `git rev-parse --abbrev-ref HEAD`
+    ps = push
+[merge]
+    tool = vimdiff
