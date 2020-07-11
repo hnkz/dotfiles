@@ -39,7 +39,7 @@ fi
 ## anyenv
 if [ ! -d ~/.anyenv ]; then
     git clone https://github.com/anyenv/anyenv ~/.anyenv
-    ~/.anyenv/bin/anyenv init
+    ~/.anyenv/bin/anyenv install --init
 fi
 ### nodenv
 if [ ! -d ~/.anyenv/envs/nodenv ]; then
