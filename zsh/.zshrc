@@ -1,4 +1,16 @@
 # omajinai
+source ~/.cargo/bin
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+
+# alias
+source ~/.dotfiles/zsh/alias.sh
+
+# path
+if [ -f '/usr/local/opt/binutils/bin/gobjcopy' ]; then
+    export PATH="/usr/local/opt/binutils/bin:$PATH"
+    alias objcopy gobjcopy
+fi
 
 # install tools
 source ~/.dotfiles/zsh/install.sh
@@ -43,21 +55,6 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-
-##############
-# my setting
-source ~/.cargo/bin
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-
-# alias
-source ~/.dotfiles/zsh/alias.sh
-
-# path
-if [ -f '/usr/local/opt/binutils/bin/gobjcopy' ]; then
-    export PATH="/usr/local/opt/binutils/bin:$PATH"
-    alias objcopy gobjcopy
-fi
 
 # depot_tools setting
 export PATH=$HOME/.depot_tools:$PATH
