@@ -33,8 +33,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
         install llvm
         install clang
         install ca-certificates
-    else
-        # yum
     fi
 fi
 
@@ -79,3 +77,6 @@ if [ ! -f ~/.cargo/bin/bat ]; then
 else
     alias cat=bat;
 fi
+
+## zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
