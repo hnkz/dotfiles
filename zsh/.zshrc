@@ -72,3 +72,5 @@ then
     eval "$(anyenv init -)"
 fi
 
+# esc delay
+KEYTIMEOUT=1
