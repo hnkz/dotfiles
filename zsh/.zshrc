@@ -2,6 +2,7 @@
 source ~/.cargo/bin
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.dotfiles/.bin:$PATH"
 
 # alias
 source ~/.dotfiles/zsh/alias.sh
